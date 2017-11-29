@@ -181,7 +181,7 @@ class Request
     public static function getProductRequest($domainID, $offers, $statsStartDate, $statsEndDate, $update, $history, array $asins, $params = null)
     {
         $r = new Request();
-        $r->path = "product";
+        $r->path = "search";
         $r->parameter["asin"] = implode(",", $asins);
         $r->parameter["domain"] = $domainID;
         $r->parameter["update"] = $update;

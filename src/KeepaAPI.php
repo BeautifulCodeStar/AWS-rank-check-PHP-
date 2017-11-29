@@ -10,7 +10,7 @@ class KeepaAPI
 {
     const MAX_DELAY = 60000;
 
-    private $accessKey = null;
+    private $accessKey = '1snkspa6oihfcqq13cjuartru54lfdg1pb911q6f1um9rg20ak8e5a1857e958v2';
     private $userAgent = null;
     private $serializer = null;
 
@@ -20,8 +20,8 @@ class KeepaAPI
         $this->userAgent = "KEEPA-PHP Framework-" . "1.13.3";
         $this->serializer = new JsonMapper();
 
-        if (PHP_INT_SIZE != 8)
-            throw new \Exception("This Framework works only on x64 Platforms/PHP!");
+        // if (PHP_INT_SIZE != 8)
+        //     throw new \Exception("This Framework works only on x64 Platforms/PHP!");
     }
 
     /**
@@ -34,9 +34,10 @@ class KeepaAPI
      */
     public function sendRequest(Request $r)
     {
+        // echo $r->query();
+        // $url = "https://api.keepa.com/product/?key=" . $this->accessKey . "&" . "domain=3&asin=B00N3L867W,B00N3L867W";
         $url = "https://api.keepa.com/" . $r->path . "/?key=" . $this->accessKey . "&" . $r->query();
-        //$url = "https://api.keepa.com/product/?key=" . $this->accessKey . "&" . "domain=3&asin=B016XONOAO,B016XONOAO";
-
+        // $url = "https://api.keepa.com/search/?key=" . $this->accessKey . "&" . "domain=3&type=product&term=";
         $response = new Response($r);
 
         // create curl resource
