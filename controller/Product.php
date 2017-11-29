@@ -23,7 +23,7 @@ class Product {
 
 	public function __construct()
 	{
-		$this->api = new KeepaAPI("1snkspa6oihfcqq13cjuartru54lfdg1pb911q6f1um9rg20ak8e5a1857e958v2");
+		$this->api = new KeepaAPI("");
 		$this->db = new DataBase();
 	}
 	
